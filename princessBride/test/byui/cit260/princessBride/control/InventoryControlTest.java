@@ -131,9 +131,6 @@ public class InventoryControlTest {
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0001);
-
-        // TODO review the generated test code and remove the default call to fail.
-        fail("expected: " + expResult + " but was: " + result);
     }
     
 }
