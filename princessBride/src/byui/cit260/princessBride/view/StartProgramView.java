@@ -22,6 +22,11 @@ public class StartProgramView {
         String playersName = this.getPlayersName();
         
         Player player = ProgramControl.createPlayer(playersName);
+        
+        this.displayWelcomeMessage(player);
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
        
         
     }
@@ -59,6 +64,14 @@ public class StartProgramView {
         }
         
         return playersName;
+    }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n *****************************************************************\n");
+        System.out.println("**********\t Welcome to the game " + player.getName());      
+        System.out.println("**********\t Have fun storming the castle!");
+        System.out.println("\n *****************************************************************");
+       
     }
 
       

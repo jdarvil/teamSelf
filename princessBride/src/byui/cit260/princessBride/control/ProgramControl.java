@@ -12,10 +12,13 @@ import byui.cit260.princessBride.model.Player;
  * @author Daniel
  */
 public class ProgramControl {
-    
-    
-     public static Player createPlayer(String playersName) {
-        throw new UnsupportedOperationException("Not supported yet.");
-     }
+     
+     public static Player createPlayer(String playersName){
+        System.out.println("\n createPlayer called.");
+        Player player = new Player();
+        player.setName(playersName);
+        return player;
+     } 
+     
      
 }

@@ -20,8 +20,7 @@ public class Player implements Serializable{
 
     public Player() {
     }
-    
-    
+     
 
     public String getName() {
         return name;
@@ -82,11 +81,8 @@ public class Player implements Serializable{
         return true;
     }
 
-    public static class createPlayer {
-
-        public createPlayer() {
-        }
-    }
+    
+    
     
     
 }
