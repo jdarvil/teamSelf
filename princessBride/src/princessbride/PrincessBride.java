@@ -23,7 +23,6 @@ import byui.cit260.princessBride.view.StartProgramView;
  * @author Darvil
  */
 public class PrincessBride {
-
     /**
      * @param args the command line arguments
      */
@@ -127,8 +126,22 @@ public class PrincessBride {
     
     }
 
-  
+    public static void setPlayer(Player player) {
+         System.out.println("\n setPlayer called.");
     }
+
+    public static Player getPlayer() {
+         System.out.println("\n getPlayer called."); 
+         return null;
+    }
+  
+}
+
+
+
+   
+
+    
     
   
     

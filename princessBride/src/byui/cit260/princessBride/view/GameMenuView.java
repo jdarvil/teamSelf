@@ -5,32 +5,26 @@
  */
 package byui.cit260.princessBride.view;
 
-import byui.cit260.princessBride.control.GameControl;
-import byui.cit260.princessBride.control.ProgramControl;
-import byui.cit260.princessBride.model.Player;
 import java.util.Scanner;
-import princessbride.PrincessBride;
 
 /**
  *
  * @author Daniel
  */
-public class MainMenuView {
-
+class GameMenuView {
     private final String MENU = "\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+              Main Menu               +" +
+            "\n+              Game Menu               +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
-            "\n+ N - New game                         +" +
-            "\n+ L - Load the game                    +" +
-            "\n+ S - Save the game                    +" +
-            "\n+ H - Get help on how to play the game +" +
-            "\n+ E - Exit                             +" +
+            "\n+ B - search for Buttercup             +" +
+            "\n+ G - show the Game menu               +" +
+            "\n+ I - look at your Inventory           +" +
+            "\n+ S - Save game and continue playing   +" +
+            "\n+ E - Exit to Main Menu                +" +
             "\n++++++++++++++++++++++++++++++++++++++++";
    
-    
-    public void displayMenu() {
-        char selection = ' ';
+    void displayMenu() {
+         char selection = ' ';
         do {
             
             System.out.println(MENU);
@@ -66,52 +60,39 @@ public class MainMenuView {
     private void doAction(char choice) {
         
         switch (choice){
-            case 'N':
-                this.newGame();
+            case 'B':
+                this.chaseButtercup();
                 break;
-            case 'L':
-                this.loadGame();
+            case 'G':
+                this.showMenu();
+                break;
+            case 'I':
+                this.inventoryLook();
                 break;
             case 'S':
-                this.saveGame();
-                break;
-            case 'H':
-                this.getHelp();
+                this.saveGameContinuePlay();
                 break;
             case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-            
-        }
+    }
+}
+
+    private void chaseButtercup() {
+        System.out.println("\n chaseButtercup called");
     }
 
-    private void newGame() {
-       GameControl.createNewGame(PrincessBride.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void showMenu() {
+        System.out.println("\n showMenu called");
     }
 
-    private void loadGame() {
-        System.out.println("\n*** loadGame called ***");
+    private void inventoryLook() {
+        System.out.println("\n inventoryLook called");
     }
 
-    private void saveGame() {
-        System.out.println("\n*** saveGame called ***");
+    private void saveGameContinuePlay() {
+        System.out.println("\n saveGameContinuePlay called");
     }
-    private void getHelp() {
-        
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-    }
-
-       
-    
-    }
-
-    
-    
-    
-
+}

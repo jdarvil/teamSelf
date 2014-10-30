@@ -6,6 +6,7 @@
 package byui.cit260.princessBride.control;
 
 import byui.cit260.princessBride.model.Player;
+import princessbride.PrincessBride;
 
 /**
  *
@@ -17,8 +18,9 @@ public class ProgramControl {
         System.out.println("\n createPlayer called.");
         Player player = new Player();
         player.setName(playersName);
+        
+        PrincessBride.setPlayer(player);
         return player;
      } 
-     
      
 }
