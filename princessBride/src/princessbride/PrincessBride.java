@@ -16,6 +16,7 @@ import byui.cit260.princessBride.model.Player;
 import byui.cit260.princessBride.model.Scene;
 import byui.cit260.princessBride.model.TortureDevice;
 import byui.cit260.princessBride.model.Weapon;
+import byui.cit260.princessBride.view.StartProgramView;
 
 /**
  *
@@ -120,9 +121,15 @@ public class PrincessBride {
         
         String tortureInfo = tortureOne.toString();
         System.out.println(tortureInfo);
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
     
+    }
+
+  
     }
     
   
     
-}
+

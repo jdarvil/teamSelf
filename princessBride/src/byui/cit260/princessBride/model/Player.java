@@ -81,6 +81,12 @@ public class Player implements Serializable{
         }
         return true;
     }
+
+    public static class createPlayer {
+
+        public createPlayer() {
+        }
+    }
     
     
 }
