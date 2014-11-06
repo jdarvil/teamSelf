@@ -15,9 +15,9 @@ import princessbride.PrincessBride;
  *
  * @author Daniel
  */
-public class MainMenuView {
-
-    private final String MENU = "\n" +
+public class MainMenuView extends View {
+    public MainMenuView() {
+    super("\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
             "\n+              Main Menu               +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
@@ -26,42 +26,12 @@ public class MainMenuView {
             "\n+ S - Save the game                    +" +
             "\n+ H - Get help on how to play the game +" +
             "\n+ E - Exit                             +" +
-            "\n++++++++++++++++++++++++++++++++++++++++";
+            "\n++++++++++++++++++++++++++++++++++++++++");
    
-    
-    public void displayMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != 'E');
     }
+  
 
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-            System.out.println("Enter your menu choice.");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
-                continue;
-                }
-            break;
-        }
-        
-        return input;
-    }
+   
 
     private void doAction(char choice) {
         
