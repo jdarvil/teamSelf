@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Darvil
  */
 public abstract class View implements ViewInterface {
-    private String promptMessage;
+    private final String promptMessage;
    
   public View(String promptMessage){
     this.promptMessage = promptMessage;
@@ -22,7 +22,7 @@ public abstract class View implements ViewInterface {
   @Override
   public void display(){
   String value;
-   
+  char selection = ' ';
   do{
   System.out.println(this.promptMessage); //display promt message
   value = this.getInput(); // get the user selection
@@ -63,6 +63,7 @@ public abstract class View implements ViewInterface {
    
   @Override
   public void doAction(String value){
+      
    
   }
    

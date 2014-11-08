@@ -32,10 +32,12 @@ public class MainMenuView extends View {
   
 
    
-
-    private void doAction(char choice) {
-        
-        switch (choice){
+@Override
+    public void doAction(String value) {
+        char selection = ' '; 
+        selection = value.charAt(0);
+   
+        switch (selection){
             case 'N':
                 this.newGame();
                 break;
@@ -74,7 +76,7 @@ public class MainMenuView extends View {
     private void getHelp() {
         
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
        
