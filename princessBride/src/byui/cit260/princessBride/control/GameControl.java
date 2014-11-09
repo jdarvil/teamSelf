@@ -15,9 +15,13 @@ public class GameControl {
     
    public static void createNewGame(Player player){
        System.out.println("\n createNewGame called");
-       
    
 }
-   
-   
+   public static void fightInigo(Player player){
+       System.out.println("Called from GameControl class. You cannot fight Inigo yet");
+       
+   }
+    public static void talkToInigo(Player player){
+       System.out.println("Called from GameControl class. You cannot speak to Inigo yet");
    }   
+}

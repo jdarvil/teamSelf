@@ -53,7 +53,8 @@ public class GameMenuView extends View{
 }
 
     private void chaseButtercup() {
-        System.out.println("\n chaseButtercup called");
+        SearchMenuView searchMenu = new SearchMenuView();
+        searchMenu.display();
     }
 
     private void showMenu() {
