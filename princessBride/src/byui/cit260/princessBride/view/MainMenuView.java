@@ -63,7 +63,7 @@ public class MainMenuView extends View {
        GameControl.createNewGame(PrincessBride.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void loadGame() {
