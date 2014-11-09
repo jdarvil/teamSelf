@@ -11,8 +11,9 @@ import java.util.Scanner;
  *
  * @author Daniel
  */
-class GameMenuView {
-    private final String MENU = "\n" +
+public class GameMenuView extends View{
+    public GameMenuView(){
+        super("\n" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
             "\n+              Game Menu               +" +
             "\n++++++++++++++++++++++++++++++++++++++++" +
@@ -21,45 +22,16 @@ class GameMenuView {
             "\n+ I - look at your Inventory           +" +
             "\n+ S - Save game and continue playing   +" +
             "\n+ E - Exit to Main Menu                +" +
-            "\n++++++++++++++++++++++++++++++++++++++++";
-   
-    void displayMenu() {
-         char selection = ' ';
-        do {
-            
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != 'E');
+            "\n++++++++++++++++++++++++++++++++++++++++");
     }
 
-    private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
+@Override
+    public void doAction(String value) {
         
-        while(!valid){
-            System.out.println("Enter your menu choice.");
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
-                continue;
-                }
-            break;
-        }
+        char selection = ' ';
+        selection = value.charAt(0);
         
-        return input;
-    }
-
-    private void doAction(char choice) {
-        
-        switch (choice){
+        switch (selection){
             case 'B':
                 this.chaseButtercup();
                 break;
