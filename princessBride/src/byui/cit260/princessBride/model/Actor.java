@@ -5,6 +5,7 @@
  */
 package byui.cit260.princessBride.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,6 +17,8 @@ public class Actor implements Serializable{
     
     // class instance variables
     private String name;
+    private String description;
+    private Point coordinates;
 
     public Actor() {
     }
@@ -30,10 +33,28 @@ public class Actor implements Serializable{
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.name);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -49,7 +70,18 @@ public class Actor implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.coordinates, other.coordinates)) {
+            return false;
+        }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
     }
 
     
