@@ -21,6 +21,12 @@ public class Boulder implements Serializable {
     private double power;
 
     public Boulder() {
+        this.height = 0;
+        this.width = 0;
+        this.depth = 0;
+        this.volume = 0;
+        this.power = 0;
+        
     }
     
     

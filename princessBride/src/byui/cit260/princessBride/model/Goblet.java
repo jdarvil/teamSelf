@@ -14,11 +14,26 @@ import java.io.Serializable;
 public class Goblet implements Serializable {
     
     //class instance varialbes
+    private String description;
     private double height;
     private double width;
     private double volume;
 
     public Goblet() {
+        this.description = "\nThis is the goblet that you need to drink from"
+                + "when you are dealing with Vizzini";
+        this.height =0;
+        this.width = 0;
+        this.volume = 0;
+  
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     

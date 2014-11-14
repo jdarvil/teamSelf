@@ -6,6 +6,7 @@
 package byui.cit260.princessBride.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,8 +17,66 @@ public class Map implements Serializable{
     // class instance variables
     private double rowCount;
     private double columnCount;
+    private Location[][] locations;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Map() {
+    }
+
+    public Map(int rowCount, int columnCount) {
+       if (rowCount < 1 || columnCount < 1) {
+           System.out.println("The number of rows or columns must be > 1");
+           return;
+    }
+       this.rowCount = rowCount;
+       this.columnCount = columnCount;
+       
+       //create 2D array for locations
+       this.locations = new Location[rowCount][columnCount];
+       for (int row = 0; row < rowCount; row++) {
+           for (int column = 0; column < columnCount; column++){
+               //create and initialize Location object instance
+               Location location = new Location();
+               location.setColumn(column);
+               location.setRow(row);
+               location.setVisited(false);
+               
+               //assign the Location object to the current position in the game
+               locations[row][column] = location;
+           }
+       }
+       
+    }
+    
+  
+    
+       
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    
+    
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
     
     

@@ -19,6 +19,9 @@ public class TortureDevice implements Serializable{
     private double resistanceLevel;
 
     public TortureDevice() {
+        this.maxLevel = 0;
+        this.setLevel = 0;
+        this.resistanceLevel = 0;
     }
     
     
