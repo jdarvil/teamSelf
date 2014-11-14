@@ -84,6 +84,28 @@ public class GameControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public static InventoryItem[] getSortedInventoryList() {
+       //get inventory list for the current game
+        InventoryItem[] originalInventoryList = PrincessBride.getCurrentGame().getInventory();
+        
+        //clone (make a copy) originalList
+        InventoryItem[] inventoryList = originalInventoryList.clone();
+        
+        //using a BubbleSort to sort the list of inventoryList by name
+        InventoryItem tempInventoryItem;
+        for (int i = 0; i < inventoryList.length-1; i++) {
+            for (int j = 0; j < inventoryList.length-1-i; j++) {
+                if (inventoryList[j].getInventoryType(). compareToIgnoreCase(inventoryList[j + 1].getInventoryType()) > 0) {
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempInventoryItem;
+                }
+            }
+        }
+        
+        return inventoryList;
+    }
+
     private enum Item {
         knife,
         potion,
