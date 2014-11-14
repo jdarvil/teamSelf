@@ -15,6 +15,13 @@ public class Game implements Serializable{
     
     // class instance variables
     private double noPeople;
+    private Boulder[] boulder;
+    private InventoryItem[] inventory;
+    private Goblet goblet;
+    private TortureDevice torturedevice;
+    private Map map;
+    private Player player;
+    
 
     public Game() {
     }
@@ -27,6 +34,54 @@ public class Game implements Serializable{
 
     public void setNoPeople(double noPeople) {
         this.noPeople = noPeople;
+    }
+
+    public Boulder[] getBoulder() {
+        return boulder;
+    }
+
+    public void setBoulder(Boulder[] boulder) {
+        this.boulder = boulder;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Goblet getGoblet() {
+        return goblet;
+    }
+
+    public void setGoblet(Goblet goblet) {
+        this.goblet = goblet;
+    }
+
+    public TortureDevice getTorturedevice() {
+        return torturedevice;
+    }
+
+    public void setTorturedevice(TortureDevice torturedevice) {
+        this.torturedevice = torturedevice;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     @Override
@@ -54,6 +109,10 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void TortureDevice(TortureDevice torturedevice) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

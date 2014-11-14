@@ -61,12 +61,12 @@ public class PrincessBride {
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
         
-        Actor actorOne = new Actor();
+//        Actor actorOne = new Actor();
+//        
+//        actorOne.setName("Joe");
         
-        actorOne.setName("Joe");
-        
-        String actorInfo = actorOne.toString();
-        System.out.println(actorInfo);
+//        String actorInfo = actorOne.toString();
+//        System.out.println(actorInfo);
         
         Scene sceneOne = new Scene();
         
@@ -133,6 +133,10 @@ public class PrincessBride {
     public static Player getPlayer() {
          System.out.println("\n getPlayer called."); 
          return null;
+    }
+
+    public static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }
