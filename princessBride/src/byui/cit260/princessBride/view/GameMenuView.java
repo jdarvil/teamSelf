@@ -94,39 +94,44 @@ public class GameMenuView extends View {
 
     public void displayMap() {
         //get the map locations from the current game
-     
+        Location[][] locations = map.getLocations();
         
         double rowCount = Map.rowCount;
         double columnCount = Map.columnCount;
         boolean visited = Location.visited;
+        
+        
         //DISPLAY title
+        System.out.println("Map");
         //DISPLAY row of column numbers
-        //FOR every row in map
+        System.out.println("0 1 2 3 4 5 6 7 8");
         
-        
-        
+        //FOR every row in map  
         for (int i = 0; i < rowCount; i++) {
             //DISPLAY row divider
-
+            System.out.println("-----------------");
             //DISPLAY row number
+            System.out.println("0");
             //FOR every column in row
             for (int j = 0; j < columnCount; j++) {
                 //DISPLAY column divider
-
+                System.out.println("|");
                 //location = location[row][column]
+                location = locations[i][j];
                 //IF location has been visited
                 if (visited = true) {
                     //DISPLAY the map symbol for location
-
-                    
-                //DISPLAY " ?? "
-                    
+                    System.out.println("~~");   
                 }
-                else
+                else {
+                //DISPLAY " ?? "
+                System.out.println(" ?? ");
+                }
                 //DISPLAY ending column divider
+                System.out.println("|");
             }
             //Display ending row divider
-
+            System.out.println("----------------");
         }
 
     }
