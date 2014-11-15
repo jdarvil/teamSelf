@@ -14,12 +14,13 @@ import java.util.ArrayList;
  */
 public class Map implements Serializable{
     
+    
     // class instance variables
-    private double rowCount;
-    private double columnCount;
-    private Location[][] locations;
-    private Scene scene;
-    private ArrayList<Actor> actors;
+    public static double rowCount;
+    public static double columnCount;
+    public static Location[][] locations;
+    public Scene scene;
+    public ArrayList<Actor> actors;
 
     public Map() {
     }

@@ -9,9 +9,11 @@ import byui.cit260.princessBride.model.Boulder;
 import byui.cit260.princessBride.model.Game;
 import byui.cit260.princessBride.model.Goblet;
 import byui.cit260.princessBride.model.InventoryItem;
+import byui.cit260.princessBride.model.Location;
 import byui.cit260.princessBride.model.Map;
 import byui.cit260.princessBride.model.Player;
 import byui.cit260.princessBride.model.Scene;
+import byui.cit260.princessBride.model.Scene.SceneType;
 import byui.cit260.princessBride.model.TortureDevice;
 import princessbride.PrincessBride;
 
@@ -47,7 +49,7 @@ public class GameControl {
        MapControl.moveActorsToStartingLocation(map);
    }
 
-    private static InventoryItem[] createInventoryList() {
+    public static InventoryItem[] createInventoryList() {
       // cre8ated array[list] of inventory items
         InventoryItem[] inventory =
                     new InventoryItem[3];
@@ -80,8 +82,20 @@ public class GameControl {
         return inventory;
     }
 
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+       Location[][] locations = map.getLocations();
+       
+       //start point
+       locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+       locations[0][1].setScene(scenes[SceneType.ship.ordinal()]);
+       locations[0][2].setScene(scenes[SceneType.shore.ordinal()]);
+       locations[0][3].setScene(scenes[SceneType.cliff.ordinal()]);
+       locations[0][4].setScene(scenes[SceneType.hilltop.ordinal()]);
+       locations[0][5].setScene(scenes[SceneType.boulderfield.ordinal()]);
+       locations[0][6].setScene(scenes[SceneType.TortureChamber.ordinal()]);
+       locations[0][7].setScene(scenes[SceneType.ThroneRoom.ordinal()]);
+       locations[0][8].setScene(scenes[SceneType.finish.ordinal()]);
+        
     }
 
     public static InventoryItem[] getSortedInventoryList() {

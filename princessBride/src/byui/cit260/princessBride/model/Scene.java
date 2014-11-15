@@ -7,20 +7,54 @@ package byui.cit260.princessBride.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
+import javax.swing.ImageIcon;
+import princessbride.PrincessBride;
+import byui.cit260.princessBride.control.MapControl;
+        
+        
 /**
  *
  * @author Darvil
  */
 public class Scene implements Serializable{
+
+    public void setMapSymbol(String st) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTravelTime(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTravelTime(double POSITIVE_INFINITY) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    public static enum SceneType {
+        start,
+        ship,
+        shore,
+        cliff,
+        boulderfield,
+        hilltop,
+        TortureChamber,
+        ThroneRoom, 
+        finish,}
+            
     
     // class instance variables
-    private String description;
+    public String description;
+
+  
+    
 
     public Scene() {
     }
-    
-    
 
     public String getDescription() {
         return description;
@@ -29,7 +63,7 @@ public class Scene implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -51,6 +85,6 @@ public class Scene implements Serializable{
         }
         return true;
     }
-    
-    
 }
+
+

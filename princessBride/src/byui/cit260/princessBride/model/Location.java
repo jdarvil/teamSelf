@@ -14,10 +14,10 @@ import java.io.Serializable;
 public class Location implements Serializable {
     
     // class instance variables
-    private double row;
-    private double column;
-    private boolean visited;
-    private double amountRemaining;
+    public double row;
+    public double column;
+    public static boolean visited;
+    public double amountRemaining;
 
     public Location() {
     }
@@ -93,6 +93,10 @@ public class Location implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

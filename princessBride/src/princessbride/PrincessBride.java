@@ -25,7 +25,9 @@ import byui.cit260.princessBride.view.StartProgramView;
 public class PrincessBride {
     /**
      * @param args the command line arguments
-     */
+     */    
+    private static Game currentGame = null;
+    private static Player player = null;
     public static void main(String[] args) {
         Player playerOne = new Player();
         
@@ -139,8 +141,8 @@ public class PrincessBride {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static Object getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Game getCurrentGame() {
+        return currentGame;
     }
   
 }
