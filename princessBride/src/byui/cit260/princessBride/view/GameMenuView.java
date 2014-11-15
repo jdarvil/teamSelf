@@ -11,6 +11,7 @@ import byui.cit260.princessBride.model.InventoryItem;
 import byui.cit260.princessBride.model.Location;
 import byui.cit260.princessBride.model.Map;
 import java.util.Scanner;
+import princessbride.PrincessBride;
 
 /**
  *
@@ -94,11 +95,10 @@ public class GameMenuView extends View {
 
     public void displayMap() {
         //get the map locations from the current game
-        Location[][] locations = map.getLocations();
-        
+        Location[][] locations = PrincessBride.getCurrentGame().getMap().getLocations();        
         double rowCount = Map.rowCount;
         double columnCount = Map.columnCount;
-        boolean visited = Location.visited;
+     
         
         
         //DISPLAY title
@@ -111,15 +111,15 @@ public class GameMenuView extends View {
             //DISPLAY row divider
             System.out.println("-----------------");
             //DISPLAY row number
-            System.out.println("0");
+            System.out.println(i);
             //FOR every column in row
             for (int j = 0; j < columnCount; j++) {
                 //DISPLAY column divider
                 System.out.println("|");
                 //location = location[row][column]
-                location = locations[i][j];
+                Location location = locations[i][j];
                 //IF location has been visited
-                if (visited = true) {
+                if (location.visited) {
                     //DISPLAY the map symbol for location
                     System.out.println("~~");   
                 }

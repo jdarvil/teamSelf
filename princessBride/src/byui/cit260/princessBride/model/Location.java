@@ -16,7 +16,7 @@ public class Location implements Serializable {
     // class instance variables
     public double row;
     public double column;
-    public static boolean visited;
+    public boolean visited;
     public double amountRemaining;
 
     public Location() {

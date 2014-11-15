@@ -20,7 +20,7 @@ public class MapControl {
 
    static Map createMap() {
         
-       Map map  = new Map (3,3);
+       Map map  = new Map (1,9);
         
         Scene[] scenes = createScenes();
         

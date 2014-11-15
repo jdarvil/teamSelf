@@ -30,7 +30,7 @@ public class PrincessBride {
     private static Player player = null;
     public static void main(String[] args) {
         Player playerOne = new Player();
-        
+//        
         playerOne.setName("Captain Kudos");
         playerOne.setStrength(4.00);
         playerOne.setResistance(2.00);
@@ -38,8 +38,8 @@ public class PrincessBride {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
-        Game gameOne = new Game();
-        
+       Game gameOne = new Game();
+       
         gameOne.setNoPeople(2.00);
         
         String gameInfo = gameOne.toString();
@@ -62,21 +62,21 @@ public class PrincessBride {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
-        
+      
 //        Actor actorOne = new Actor();
-//        
-//        actorOne.setName("Joe");
         
+//        actorOne.setName("Joe");
+       
 //        String actorInfo = actorOne.toString();
 //        System.out.println(actorInfo);
-        
+//      
         Scene sceneOne = new Scene();
         
         sceneOne.setDescription("I don't know");
         
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
-        
+////        
         InventoryItem itemOne = new InventoryItem();
         
         itemOne.setInventoryType("weapon");
@@ -85,7 +85,7 @@ public class PrincessBride {
         
         String itemInfo = itemOne.toString();
         System.out.println(itemInfo);
-        
+       
         Weapon weaponOne = new Weapon();
         
         weaponOne.setType("Sword");
@@ -121,11 +121,11 @@ public class PrincessBride {
         tortureOne.setResistanceLevel(22.00);
         
         String tortureInfo = tortureOne.toString();
-        System.out.println(tortureInfo);
+       System.out.println(tortureInfo);
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
-    
+ 
     }
 
     public static void setPlayer(Player player) {
@@ -138,7 +138,7 @@ public class PrincessBride {
     }
 
     public static void setCurrentGame(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("\n getPlayer called."); 
     }
 
     public static Game getCurrentGame() {
