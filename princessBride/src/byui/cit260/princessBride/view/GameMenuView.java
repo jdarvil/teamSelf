@@ -95,33 +95,40 @@ public class GameMenuView extends View {
 
     public void displayMap() {
         //get the map locations from the current game
-        Location[][] locations = PrincessBride.getCurrentGame().getMap().getLocations();        
+        Location[][] locations = PrincessBride.getCurrentGame().getMap().getLocations();  
+        
         double rowCount = Map.rowCount;
         double columnCount = Map.columnCount;
      
         
         
-        //DISPLAY title
-        System.out.print("Map");
-        //DISPLAY row of column numbers
-        System.out.println("0 1 2 3 4 5 6 7 8");
+         
         
+        //DISPLAY title
+        System.out.println("Map");
+        //DISPLAY row of column numbers
+        System.out.print("   "); 
+        for (int j = 0; j < columnCount; j++) {
+            System.out.print("   " + j);
+        }
+        //DISPLAY row divider
+        System.out.print("\n---------------------");   
         //FOR every row in map  
         for (int i = 0; i < rowCount; i++) {
-            //DISPLAY row divider
-            System.out.print("-----------------");
+           
             //DISPLAY row number
-            System.out.print(i);
+            System.out.print("\n" + i + " | ");
             //FOR every column in row
             for (int j = 0; j < columnCount; j++) {
                 //DISPLAY column divider
-                System.out.print("|");
+               // System.out.print("|");
                 //location = location[row][column]
                 Location location = locations[i][j];
                 //IF location has been visited
                 if (location.visited) {
                     //DISPLAY the map symbol for location
-                    System.out.print("~~");   
+                    //System.out.print("~~~");   
+                    System.out.print(locations[i][j].getScene().getMapSymbol());
                 }
                 else {
                 //DISPLAY " ?? "
@@ -130,9 +137,9 @@ public class GameMenuView extends View {
                 //DISPLAY ending column divider
                 System.out.print("|");
             }
-            //Display ending row divider
-            System.out.println("----------------");
+           
         }
-
+            //Display ending row divider
+            System.out.println("\n---------------------");
     }
 }

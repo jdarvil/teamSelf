@@ -20,7 +20,7 @@ public class MapControl {
 
    static Map createMap() {
         
-       Map map  = new Map (4,5);
+       Map map  = new Map (3,3);
         
         Scene[] scenes = createScenes();
         
@@ -47,7 +47,7 @@ public class MapControl {
                         + "You are on a boat or something and it lands on the"
                         + "shore. Before you is a cliff where you can see "
                         + "them hoisting the Princess. ");
-        startingScene.setMapSymbol( "ST" );
+        startingScene.setMapSymbol( " ST " );
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
         scenes[Scene.SceneType.start.ordinal()] = startingScene;
@@ -61,7 +61,7 @@ public class MapControl {
                         + "You are on a boat or something and it lands on the"
                         + "shore. Before you is a cliff where you can see "
                         + "them hoisting the Princess. ");
-        shipScene.setMapSymbol( "SP" );
+        shipScene.setMapSymbol( " SP " );
         shipScene.setBlocked(false);
         shipScene.setTravelTime(240);
         scenes[Scene.SceneType.ship.ordinal()] = shipScene;
@@ -70,7 +70,7 @@ public class MapControl {
         Scene shoreScene = new Scene();
         shoreScene.setDescription(
                 "\nShip Scene ");
-        shoreScene.setMapSymbol( "BH" );
+        shoreScene.setMapSymbol( " BH " );
         shoreScene.setBlocked(false);
         shoreScene.setTravelTime(240);
         scenes[Scene.SceneType.shore.ordinal()] = shoreScene;
@@ -79,7 +79,7 @@ public class MapControl {
         Scene cliffScene = new Scene();
         cliffScene.setDescription(
                 "\nCliff Scene");
-        cliffScene.setMapSymbol( "SH" );
+        cliffScene.setMapSymbol( " SH " );
         cliffScene.setBlocked(false);
         cliffScene.setTravelTime(240);
         scenes[Scene.SceneType.cliff.ordinal()] = cliffScene;
@@ -88,7 +88,7 @@ public class MapControl {
         Scene hilltopScene = new Scene();
         hilltopScene.setDescription(
                 "\ncliff Scene");
-        hilltopScene.setMapSymbol( "HT" );
+        hilltopScene.setMapSymbol( " HT " );
         hilltopScene.setBlocked(false);
         hilltopScene.setTravelTime(240);
         scenes[Scene.SceneType.hilltop.ordinal()] = hilltopScene;
@@ -97,7 +97,7 @@ public class MapControl {
         Scene boulderfieldScene = new Scene();
         boulderfieldScene.setDescription(
                 "\nBoulder Field Scene");
-        boulderfieldScene.setMapSymbol( "BB" );
+        boulderfieldScene.setMapSymbol( " BB " );
         boulderfieldScene.setBlocked(false);
         boulderfieldScene.setTravelTime(240);
         scenes[Scene.SceneType.boulderfield.ordinal()] = boulderfieldScene;
@@ -106,7 +106,7 @@ public class MapControl {
         Scene TortureChamberScene = new Scene();
         TortureChamberScene.setDescription(
                 "\nTorture Chamber Scene");
-        TortureChamberScene.setMapSymbol( "TC" );
+        TortureChamberScene.setMapSymbol( " TC " );
         TortureChamberScene.setBlocked(false);
         TortureChamberScene.setTravelTime(240);
         scenes[Scene.SceneType.TortureChamber.ordinal()] = TortureChamberScene;
@@ -115,7 +115,7 @@ public class MapControl {
         Scene ThroneRoomScene = new Scene();
         ThroneRoomScene.setDescription(
                 "\nThrone Room Scene");
-        ThroneRoomScene.setMapSymbol( "TH" );
+        ThroneRoomScene.setMapSymbol( " TH " );
         ThroneRoomScene.setBlocked(false);
         ThroneRoomScene.setTravelTime(240);
         scenes[Scene.SceneType.ThroneRoom.ordinal()] = ThroneRoomScene;
@@ -126,7 +126,7 @@ public class MapControl {
         finishScene.setDescription(
          "\nCongratulations! You have finally completed the game"
                  + "and saved the Princess!");
-        finishScene.setMapSymbol( "FN" );
+        finishScene.setMapSymbol( " FN " );
         finishScene.setBlocked(false);
         finishScene.setTravelTime((int) Double.POSITIVE_INFINITY);
 //        ImageIcon finishSceneImage = MapControl.getImage(finishScene,

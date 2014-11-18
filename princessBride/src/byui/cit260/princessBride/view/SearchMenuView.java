@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.princessBride.view;
+import byui.cit260.princessBride.control.FightControl;
 import byui.cit260.princessBride.control.GameControl;
 /**
  *
@@ -50,12 +51,12 @@ public class SearchMenuView extends View{
     
 
     private void speakToInigo() {
-    //GameControl.fightInigo(null);
+    FightControl.talkToInigo();
     }
     
 
     private void fightInigo() {
-    //GameControl.talkToInigo(null);
+    FightControl.fightInigo();
     
     }
 }
