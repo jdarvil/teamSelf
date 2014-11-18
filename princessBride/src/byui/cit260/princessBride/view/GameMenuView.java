@@ -102,33 +102,33 @@ public class GameMenuView extends View {
         
         
         //DISPLAY title
-        System.out.println("Map");
+        System.out.print("Map");
         //DISPLAY row of column numbers
         System.out.println("0 1 2 3 4 5 6 7 8");
         
         //FOR every row in map  
         for (int i = 0; i < rowCount; i++) {
             //DISPLAY row divider
-            System.out.println("-----------------");
+            System.out.print("-----------------");
             //DISPLAY row number
-            System.out.println(i);
+            System.out.print(i);
             //FOR every column in row
             for (int j = 0; j < columnCount; j++) {
                 //DISPLAY column divider
-                System.out.println("|");
+                System.out.print("|");
                 //location = location[row][column]
                 Location location = locations[i][j];
                 //IF location has been visited
                 if (location.visited) {
                     //DISPLAY the map symbol for location
-                    System.out.println("~~");   
+                    System.out.print("~~");   
                 }
                 else {
                 //DISPLAY " ?? "
-                System.out.println(" ?? ");
+                System.out.print(" ?? ");
                 }
                 //DISPLAY ending column divider
-                System.out.println("|");
+                System.out.print("|");
             }
             //Display ending row divider
             System.out.println("----------------");
