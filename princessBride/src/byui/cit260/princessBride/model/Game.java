@@ -15,7 +15,7 @@ public class Game implements Serializable{
     
     // class instance variables
     private double noPeople;
-    private Boulder[] boulder;
+    private Boulder boulder;
     private InventoryItem[] inventory;
     private Goblet goblet;
     private TortureDevice torturedevice;
@@ -36,11 +36,11 @@ public class Game implements Serializable{
         this.noPeople = noPeople;
     }
 
-    public Boulder[] getBoulder() {
+    public Boulder getBoulder() {
         return boulder;
     }
 
-    public void setBoulder(Boulder[] boulder) {
+    public void setBoulder(Boulder boulder) {
         this.boulder = boulder;
     }
 
@@ -112,8 +112,10 @@ public class Game implements Serializable{
     }
 
     public void TortureDevice(TortureDevice torturedevice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    System.out.println(" *** STUB FUNCTION ***");
     }
+
+    
     
     
 }

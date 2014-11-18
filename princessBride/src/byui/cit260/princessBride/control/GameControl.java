@@ -33,7 +33,7 @@ public class GameControl {
        InventoryItem[] inventoryList = GameControl.createInventoryList();
        game.setInventory(inventoryList);
        
-       Boulder[] boulder = GameControl.createBoulder();
+       Boulder boulder = new Boulder();
        game.setBoulder(boulder);
        
        Goblet goblet = new Goblet();
@@ -52,7 +52,7 @@ public class GameControl {
     public static InventoryItem[] createInventoryList() {
       // cre8ated array[list] of inventory items
         InventoryItem[] inventory =
-                    new InventoryItem[3];
+                    new InventoryItem[4];
         
         InventoryItem knife = new InventoryItem();
         knife.setInventoryType("Knife");
@@ -126,9 +126,7 @@ public class GameControl {
         sword,
         key;
          }
-    private static Boulder[] createBoulder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
        
        
        

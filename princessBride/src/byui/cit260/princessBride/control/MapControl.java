@@ -46,11 +46,13 @@ public class MapControl {
         startingScene.setMapSymbol( "ST" );
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-//        ImageIcon startingSceneImage = MapControl.getImage(startingScene,
-//                "PATH_TO_IMAGE")
-//                ;
-//        startingScene.setIcon(startingSceneImage);
         scenes[Scene.SceneType.start.ordinal()] = startingScene;
+
+        /* NEED TO LIST ALL SCENES AND SCENE SYMBLOS*/
+        
+        
+        
+        
         
         Scene finishScene = new Scene();
         finishScene.setDescription(
@@ -58,7 +60,7 @@ public class MapControl {
                  + "and saved the Princess!");
         finishScene.setMapSymbol( "FN" );
         finishScene.setBlocked(false);
-        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+        finishScene.setTravelTime((int) Double.POSITIVE_INFINITY);
 //        ImageIcon finishSceneImage = MapControl.getImage(finishScene,
 //                "PATH_TO_IMAGE");
 //        finishScene.setIcon(finishSceneImage);

@@ -18,22 +18,7 @@ import byui.cit260.princessBride.control.MapControl;
  */
 public class Scene implements Serializable{
 
-    public void setMapSymbol(String st) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setTravelTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setTravelTime(double POSITIVE_INFINITY) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     
     public static enum SceneType {
         start,
@@ -49,7 +34,33 @@ public class Scene implements Serializable{
     
     // class instance variables
     public String description;
+    public String MapSymbol;
+    public boolean Blocked;
+    public double TravelTime;
 
+    public double getTravelTime() {
+        return TravelTime;
+    }
+
+    public void setTravelTime(int TravelTime) {
+        this.TravelTime = TravelTime;
+    }
+
+    public String getMapSymbol() {
+        return MapSymbol;
+    }
+
+    public void setMapSymbol(String MapSymbol) {
+        this.MapSymbol = MapSymbol;
+    }
+
+    public boolean isBlocked() {
+        return Blocked;
+    }
+
+    public void setBlocked(boolean Blocked) {
+        this.Blocked = Blocked;
+    }
   
     
 

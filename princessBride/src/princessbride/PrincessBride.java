@@ -128,24 +128,24 @@ public class PrincessBride {
  
     }
 
-    public static void setPlayer(Player player) {
-         System.out.println("\n setPlayer called.");
+     public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        PrincessBride.currentGame = currentGame;
     }
 
     public static Player getPlayer() {
-         System.out.println("\n getPlayer called."); 
-         return null;
+        return player;
     }
 
-    public static void setCurrentGame(Game game) {
-         System.out.println("\n getPlayer called."); 
+    public static void setPlayer(Player player) {
+        PrincessBride.player = player;
     }
-
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
-  
 }
+  
+
 
 
 
