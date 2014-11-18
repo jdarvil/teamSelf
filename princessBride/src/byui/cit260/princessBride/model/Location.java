@@ -6,6 +6,7 @@
 package byui.cit260.princessBride.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +19,9 @@ public class Location implements Serializable {
     public double column;
     public boolean visited;
     public double amountRemaining;
+    public Scene scene;
+    public ArrayList<Actor> actors;
+    
 
     public Location() {
     }
@@ -53,7 +57,23 @@ public class Location implements Serializable {
     }
 
     public void setAmountRemaining(double amountRemaining) {
-        this.amountRemaining = amountRemaining;
+        this.amountRemaining = amountRemaining;}
+        
+        
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
     }
 
     @Override
@@ -95,11 +115,7 @@ public class Location implements Serializable {
         return true;
     }
 
-    public void setScene(Scene scene) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
+   
     
     
     

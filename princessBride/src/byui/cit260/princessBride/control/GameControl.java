@@ -83,18 +83,18 @@ public class GameControl {
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-       Location[][] locations = map.getLocations();
+       
+        Location[][] locations = Map.getLocations();
        
        //start point
        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
        locations[0][1].setScene(scenes[SceneType.ship.ordinal()]);
-       locations[0][2].setScene(scenes[SceneType.shore.ordinal()]);
        locations[0][3].setScene(scenes[SceneType.cliff.ordinal()]);
-       locations[0][4].setScene(scenes[SceneType.hilltop.ordinal()]);
-       locations[0][5].setScene(scenes[SceneType.boulderfield.ordinal()]);
-       locations[0][6].setScene(scenes[SceneType.TortureChamber.ordinal()]);
-       locations[0][7].setScene(scenes[SceneType.ThroneRoom.ordinal()]);
-       locations[0][8].setScene(scenes[SceneType.finish.ordinal()]);
+       locations[1][0].setScene(scenes[SceneType.hilltop.ordinal()]);
+       locations[1][1].setScene(scenes[SceneType.boulderfield.ordinal()]);
+       locations[1][2].setScene(scenes[SceneType.TortureChamber.ordinal()]);
+       locations[1][3].setScene(scenes[SceneType.ThroneRoom.ordinal()]);
+       locations[1][4].setScene(scenes[SceneType.finish.ordinal()]);
         
     }
 

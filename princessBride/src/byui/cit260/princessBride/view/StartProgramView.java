@@ -27,6 +27,7 @@ public class StartProgramView {
         
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+                
        
         
     }

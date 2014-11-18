@@ -19,8 +19,31 @@ public class Map implements Serializable{
     public static double rowCount;
     public static double columnCount;
     public static Location[][] locations;
-    public Scene scene;
-    public ArrayList<Actor> actors;
+
+    public static double getRowCount() {
+        return rowCount;
+    }
+
+    public static void setRowCount(double rowCount) {
+        Map.rowCount = rowCount;
+    }
+
+    public static double getColumnCount() {
+        return columnCount;
+    }
+
+    public static void setColumnCount(double columnCount) {
+        Map.columnCount = columnCount;
+    }
+
+    public static Location[][] getLocations() {
+        return locations;
+    }
+
+    public static void setLocations(Location[][] locations) {
+        Map.locations = locations;
+    }
+    
 
     public Map() {
     }
@@ -47,56 +70,8 @@ public class Map implements Serializable{
                locations[row][column] = location;
            }
        }
-       
     }
-    
-  
-    
-       
-
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
-    public ArrayList<Actor> getActors() {
-        return actors;
-    }
-
-    public void setActors(ArrayList<Actor> actors) {
-        this.actors = actors;
-    }
-
-    
-    
-    public Location[][] getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
-    }
-    
-    
-
-    public double getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
-    }
+      
 
     @Override
     public String toString() {
