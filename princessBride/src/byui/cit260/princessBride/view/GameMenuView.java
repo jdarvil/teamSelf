@@ -24,6 +24,7 @@ public class GameMenuView extends View {
                 + "\n++++++++++++++++++++++++++++++++++++++++"
                 + "\n+              Game Menu               +"
                 + "\n++++++++++++++++++++++++++++++++++++++++"
+                + "\n+ V - Display the Map                  +"
                 + "\n+ B - search for Buttercup             +"
                 + "\n+ G - show the Game menu               +"
                 + "\n+ I - look at your Inventory           +"
