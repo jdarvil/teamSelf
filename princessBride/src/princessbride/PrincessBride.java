@@ -47,8 +47,8 @@ public class PrincessBride {
         
         Map mapOne = new Map();
         
-        mapOne.setRowCount(3.00);
-        mapOne.setColumnCount(2.00);
+        Map.setRowCount(3.00);
+        Map.setColumnCount(2.00);
         
         String mapInfo = mapOne.toString();
         System.out.println(mapInfo);
