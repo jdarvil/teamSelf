@@ -51,12 +51,12 @@ public class SearchMenuView extends View{
     
 
     private void speakToInigo() {
-    FightControl.talkToInigo();
+        FightControl.talkToInigo();
     }
     
 
     private void fightInigo() {
-    FightControl.fightInigo();
+        FightControl.fightInigo();
     
     }
 }

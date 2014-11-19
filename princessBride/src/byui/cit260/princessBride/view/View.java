@@ -21,14 +21,19 @@ public abstract class View implements ViewInterface {
    
   @Override
   public void display(){
-  String value;
-  char selection = ' ';
-  do{
-  System.out.println(this.promptMessage); //display promt message
-  value = this.getInput(); // get the user selection
-  this.doAction(value); // do action based on selection
-   
-  }while (!value.equals("E")||!value.equals("e"));
+    String value;
+    char selection = ' ';
+    do{
+      System.out.println(this.promptMessage); //display promt message
+      value = this.getInput(); // get the user selection
+      this.doAction(value); // do action based on selection
+      
+    /* Instructor: 
+     * You have an infinite loop here. The value will always be something other
+     * than E or e. If one of them is true then the expression evauates to true.
+     * Think about the compound operator || (OR). Don't you want something else.
+     */ 
+    }while (!value.equals("E")||!value.equals("e"));
    
   }
 
