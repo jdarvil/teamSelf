@@ -68,9 +68,12 @@ public class HelpMenuView extends View {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-    }
+        }
     }
 
+    /* Instructor: 
+     * Each of these functions needs to display the appropriate help text 
+     */
     private void gamePlayHelpView() {
         System.out.println("\n gamePlayHelpView called");
     }

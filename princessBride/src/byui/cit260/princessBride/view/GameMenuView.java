@@ -6,11 +6,9 @@
 package byui.cit260.princessBride.view;
 
 import byui.cit260.princessBride.control.GameControl;
-import byui.cit260.princessBride.control.MapControl;
 import byui.cit260.princessBride.model.InventoryItem;
 import byui.cit260.princessBride.model.Location;
 import byui.cit260.princessBride.model.Map;
-import java.util.Scanner;
 import princessbride.PrincessBride;
 
 /**
