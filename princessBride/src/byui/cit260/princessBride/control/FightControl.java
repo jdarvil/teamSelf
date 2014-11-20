@@ -68,6 +68,7 @@ public class FightControl {
         while (!keyboard.hasNextInt()){
         	System.out.println("Please enter a valid integer!");
         	keyboard.next();
+                
         }
         
         int myNumber = keyboard.nextInt();
@@ -77,62 +78,68 @@ public class FightControl {
         	
         	
         	
-        	
-        	/// STUFF HAPPENS WHEN YOU GUESS WRONG
+        	/// STUFF HAPPENS WHEN YOU GUESS WRONG        	
+
         	while (myNumber != hisNumber) 
-        				{
-        				System.out.println("Close...");
-        				if (myNumber > hisNumber){
-        				System.out.println("Try a lower number in this range.");
-        				for( i=myNumber; i>hisNumber-2; i--)
-        				{
-        					System.out.print(i - 1 + "|");
-        				}
-        				}
-        				 
-        				System.out.print("Enter a number between these two numbers: ");
-        				while (!keyboard.hasNextInt()){
-        		        	System.out.println("Please enter a valid integer!");
-        		        	keyboard.next();
-        		        }
-        				myNumber = keyboard.nextInt();
-        				guess++;
-        				if (myNumber < hisNumber){
-            				System.out.println("Nope...");
-            				System.out.println("Higher.");
-            				for( i=myNumber; i<hisNumber+2; i++)
-            					{
-            					System.out.print(i + 1 +" | ");
-            					}
-            			
-        				       				                      
+                    {
+                    System.out.println("Close...");
+                    if (myNumber > hisNumber)
+                        {
+                    System.out.println("Try a lower number in this range.");
+                    for( i=myNumber; i>hisNumber-2; i--)
+                            {   
+                            System.out.print(i - 1 + "|");
+                            }
                         }
-        				}
-        				if (guess > 3)
-        					{
-        					System.out.println(hisNumber);
-        					System.out.println("You got my number, but took  ");
-        					System.out.println( guess + " turns.");
-        					
-        					}
-      
-        				else
-        				{
-        				System.out.println(hisNumber);
-        				System.out.print("You win after ");
-        				System.out.println(guess + " guesses. I will join "
-        						+ "you in your plight to save the Princess.");
-        				}
+
+                    System.out.print("Enter a number between these two numbers: ");
+                    while (!keyboard.hasNextInt()){
+                    System.out.println("Please enter a valid integer!");
+                    keyboard.next();
+            }
+                    myNumber = keyboard.nextInt();
+                    if (myNumber <= 0 || hisNumber  > 100)
+        		{
+                        System.out.println("Please enter a positive integer "
+                        + "or a number less than 10.");
+                        }
+                    guess++;
+                    if (myNumber < hisNumber)
+                        {
+                    System.out.println("Nope...");
+                    System.out.println("Higher.");
+                    for( i=myNumber; i<hisNumber+2; i++)
+                            {
+                            System.out.print(i + 1 +" | ");
+                            }
+                        }   
+                    }
+                    if (guess > 3)
+                            {
+                            System.out.println(hisNumber);
+                            System.out.println("You got my number, but took  ");
+                            System.out.println( guess + " turns.");
+                            FightControl.fightInigo();
+                            
+                            }
+
+                    else
+                    {
+                    System.out.println(hisNumber);
+                    System.out.print("You win after ");
+                    System.out.println(guess + " guesses. I will join "
+                                    + "you in your plight to save the Princess.");
+                    }
     	
-				}
+				  System.exit(0);}
 
+                  
 
-        
         
 
 
     public static void fightInigo() {
-        System.out.println("Stub Function");
+        System.out.println("Stub Function - Prepare to Die!");
     }
 }
 
