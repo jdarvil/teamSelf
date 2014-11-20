@@ -15,21 +15,33 @@ import javax.swing.*;
 public class FightControl {
 
     public static void talkToInigo() {
-        int guess = 0;
+        //This block of code generates an array of ten sequential numbers between 1 and 100
+		//This block also chooses a number from within the range as the magic number
+		int guess = 0;
+		//generate a random number between 1 and 100, excluding 0
+		Random rn = new Random();
+		int min = 1;
+		int max = 90;
+		int R = rn.nextInt(max-min) + min;
+		System.out.println(R + "- This is the random number where the array starts");
         // create an array of numbers
         int[] fightInigoArray = new int[10];
-        int max = fightInigoArray[9];
-        int min = fightInigoArray[0];
-        System.out.println(max);
-       //Generate random number from the array indexees and prohibit the number from being 0
-        int inigosNumber = new Random().nextInt(fightInigoArray.length)+1;
+        // populate the array        
+		for (int i=0; i<fightInigoArray.length;i++){
+			fightInigoArray[i] = i + R;
+		}
+		//This is where the random number from within the range is chosen
+		int hisNumber = new Random().nextInt(fightInigoArray.length);
+		hisNumber = fightInigoArray[hisNumber];
+        //Generate random number from the array index and prohibit the number from being 0
         
+        int i;
                 		
         // For testing purposes to make sure it is generating a random number
         // uncomment this line
-        System.out.println(inigosNumber);
-
-         
+        
+        System.out.println(hisNumber + "- This is the random number that Inigo picked");
+        
         
         System.out.println("\nYou try to speak to him and explain"
                 + "\nyour situation. He says if you do not want"
@@ -43,71 +55,87 @@ public class FightControl {
         
         System.out.print("\nInigo Says: "
         		+ "Here are ten numbers.\n");
-        for(int i=0; i<10; i++)
-        {
-        	System.out.print(i+1 + " | ");
         
+        for ( i=0; i<fightInigoArray.length; i++){
+        	System.out.print(fightInigoArray[i]+ "|");
         }
-        System.out.print("\nPlease guess a number between the lowest and the highest:");
-        	int inputNumber = keyboard.nextInt();
-        	guess++;
-        	if (inputNumber <= 0){
-                System.out.println("Please enter a positive integer");
-                        }
-            
-            
-        	while (inputNumber > inigosNumber) {
-            System.out.println("Close...");
-            System.out.println("Try a lower number in this range.");
-            for(int i=0; i<inputNumber; i++)
-            {
-            	System.out.print(i+1 + " | ");
-            
-            }
-            System.out.print("Enter a number between the lowest and highest: ");
-            
-            inputNumber = keyboard.nextInt();
-                         guess++;
-                         if (inputNumber <= 0){
-                System.out.println("Please enter a positive integer");
-                        }
-                }
-        	while (inputNumber < inigosNumber) {
-                System.out.println("Nope...");
-                System.out.println("Try a number in this range.");
-                for(int i=inputNumber; i<10; i++)
-                {
-                	System.out.print(i+1 + " | ");
-                
-                }
-                System.out.print("Enter a number between the lowest and highest: ");
-                
-                inputNumber = keyboard.nextInt();
-                             guess++;
-                             if (inputNumber <= 0){
-                System.out.println("Please enter a positive integer");
-                        }
-        	}
+        
+        
+        System.out.println("\nPlease guess a number between"
+        		+ " the lowest and the highest:"
+        		+ " You have five chances.");
+        System.out.println("Number:");
+        while (!keyboard.hasNextInt()){
+        	System.out.println("Please enter a valid integer!");
+        	keyboard.next();
+        }
+        
+        int myNumber = keyboard.nextInt();
         	
-        
-        if (guess > 3){
-        	System.out.println("You got my number, but took too many turns."
-        			+ "You aren't very good at this!");
-                
-        }
+        		
+        	guess++;
+        	
+        	
+        	
+        	
+        	/// STUFF HAPPENS WHEN YOU GUESS WRONG
+        	while (myNumber != hisNumber) 
+        				{
+        				System.out.println("Close...");
+        				if (myNumber > hisNumber){
+        				System.out.println("Try a lower number in this range.");
+        				for( i=myNumber; i>hisNumber-2; i--)
+        				{
+        					System.out.print(i - 1 + "|");
+        				}
+        				}
+        				 
+        				System.out.print("Enter a number between these two numbers: ");
+        				while (!keyboard.hasNextInt()){
+        		        	System.out.println("Please enter a valid integer!");
+        		        	keyboard.next();
+        		        }
+        				myNumber = keyboard.nextInt();
+        				guess++;
+        				if (myNumber < hisNumber){
+            				System.out.println("Nope...");
+            				System.out.println("Higher.");
+            				for( i=myNumber; i<hisNumber+2; i++)
+            					{
+            					System.out.print(i + 1 +" | ");
+            					}
+            			
+        				       				                      
+                        }
+        				}
+        				if (guess > 3)
+        					{
+        					System.out.println(hisNumber);
+        					System.out.println("You got my number, but took  ");
+        					System.out.println( guess + " turns.");
+        					
+        					}
       
-        else{ 
+        				else
+        				{
+        				System.out.println(hisNumber);
+        				System.out.print("You win after ");
+        				System.out.println(guess + " guesses. I will join "
+        						+ "you in your plight to save the Princess.");
+        				}
+    	
+				}
+
+
         
-        System.out.print("You win after ");
-        System.out.println(guess + " guesses. I will join "
-        		+ "you in your plight to save the Princess.");
-        }
-    
-        }
+        
+
 
     public static void fightInigo() {
         System.out.println("Stub Function");
     }
+}
+
            
         
-    }
+    
