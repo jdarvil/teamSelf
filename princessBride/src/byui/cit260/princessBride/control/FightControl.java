@@ -5,6 +5,7 @@
  */
 package byui.cit260.princessBride.control;
 
+import byui.cit260.princessBride.exceptions.FightControlException;
 import java.util.Scanner;
 import java.util.Random;
 import javax.swing.*;
@@ -14,7 +15,7 @@ import javax.swing.*;
  */
 public class FightControl {
 
-    public static void talkToInigo() {
+    public static void talkToInigo() throws FightControlException {
         //This block of code generates an array of ten sequential numbers between 1 and 100
 		//This block also chooses a number from within the range as the magic number
 		int guess = 0;
@@ -100,8 +101,9 @@ public class FightControl {
                     myNumber = keyboard.nextInt();
                     if (myNumber <= 0 || hisNumber  > 100)
         		{
-                        System.out.println("Please enter a positive integer "
-                        + "or a number less than 10.");
+                       throw new FightControlException("Please enter a positive integer "
+                        + "or a number less than 100.");
+                        
                         }
                     guess++;
                     if (myNumber < hisNumber)
@@ -131,7 +133,10 @@ public class FightControl {
                                     + "you in your plight to save the Princess.");
                     }
     	
-				  System.exit(0);}
+				  System.exit(0);
+                               
+}
+
 
                   
 

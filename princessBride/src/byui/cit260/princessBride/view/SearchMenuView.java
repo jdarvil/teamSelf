@@ -6,6 +6,9 @@
 package byui.cit260.princessBride.view;
 import byui.cit260.princessBride.control.FightControl;
 import byui.cit260.princessBride.control.GameControl;
+import byui.cit260.princessBride.exceptions.FightControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Jason
@@ -36,10 +39,22 @@ public class SearchMenuView extends View{
         
         switch (selection){
             case 'S':
+                {
+            try {
                 this.speakToInigo();
+            } catch (FightControlException me) {
+                System.out.println(me.getMessage());
+            }
+        }
                 break;
             case 'F':
+        {
+            try {
                 this.fightInigo();
+            } catch (FightControlException me) {
+                System.out.println(me.getMessage());
+            }
+        }
                 break;
             case 'R':
                 return;
@@ -50,17 +65,20 @@ public class SearchMenuView extends View{
     }
     
 
-    private void speakToInigo() {
-        FightControl.talkToInigo();
-    }
+    private void speakToInigo() throws FightControlException{
+        // implement Exception Control - Jason Bullock Individual Assignment
+       try {
+            FightControl.talkToInigo();
+        }
+        catch (FightControlException me) {
+            System.out.println(me.getMessage());
+        }
+        }
+    
     
 
-    private void fightInigo() {
+    private void fightInigo() throws FightControlException {
         FightControl.fightInigo();
     
     }
 }
-       
-        
-        
-    

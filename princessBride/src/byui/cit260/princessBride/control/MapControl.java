@@ -5,10 +5,12 @@
  */
 package byui.cit260.princessBride.control;
 
+import byui.cit260.princessBride.model.Actor;
 import byui.cit260.princessBride.model.Game;
 import byui.cit260.princessBride.model.Map;
 import byui.cit260.princessBride.model.Scene;
 import byui.cit260.princessBride.model.Scene.SceneType;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 import princessbride.PrincessBride;
 
@@ -140,7 +142,39 @@ public class MapControl {
         
       }
 
-    static void moveActorsToStartingLocation(Map map) {
-    System.out.println("*** STUB FUNCTION ***");
-    }
+      public static void moveActorToLocation(Actor actor, Point coordinates)
+              throws MapControlException {
+          
+          Map map = PrincessBride.getCurrentGame().getMap();
+          int newRow = coordinates.x-1;
+          int newColumn = coordinates.y-1;
+          
+          if (newRow < 0 || newRow >= Map.getRowCount() || newColumn < 0 || newColumn >= Map.getColumnCount()) {
+              throw new MapControlException("Cannot move actor to location"
+                      + " " + coordinates.x + ", " + coordinates.y
+                       + " because that location is outside "
+                      + "the bounds of the map!");
+                  
+              }
+          
+          
+          
+      }
+      
+      
+      
+  public static void moveActorsToStartingLocation(Map map) throws MapControlException {
+    // for every actor
+        Actor[] actors = Actor.values();
+        
+        for (Actor actor : actors) {
+            Point coordinates = actor.getCoordinates();
+            MapControl.moveActorToLocation(actor, coordinates);
+           
 }
+        
+  }
+        }
+        
+        
+    

@@ -10,5 +10,9 @@ package byui.cit260.princessBride.control;
  * @author Jason
  */
 class MapControlException extends Exception {
+
+    MapControlException(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
