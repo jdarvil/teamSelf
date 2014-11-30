@@ -5,6 +5,7 @@
  */
 package byui.cit260.princessBride.control;
       
+import byui.cit260.princessBride.exceptions.MapControlException;
 import byui.cit260.princessBride.model.Boulder;
 import byui.cit260.princessBride.model.Game;
 import byui.cit260.princessBride.model.Goblet;

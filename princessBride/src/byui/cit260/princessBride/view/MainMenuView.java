@@ -6,9 +6,12 @@
 package byui.cit260.princessBride.view;
 
 import byui.cit260.princessBride.control.GameControl;
+import byui.cit260.princessBride.exceptions.MapControlException;
 import byui.cit260.princessBride.control.ProgramControl;
 import byui.cit260.princessBride.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import princessbride.PrincessBride;
 
 /**
@@ -39,7 +42,13 @@ public class MainMenuView extends View {
    
         switch (selection){
             case 'N':
+        {
+            try {
                 this.newGame();
+            } catch (MapControlException me) {
+               System.out.println(me.getMessage());
+            }
+        }
                 break;
             case 'L':
                 this.loadGame();
@@ -59,7 +68,7 @@ public class MainMenuView extends View {
         }
     }
 
-    private void newGame() {
+    private void newGame() throws MapControlException  {
 
         GameControl.createNewGame(PrincessBride.getPlayer());
         
