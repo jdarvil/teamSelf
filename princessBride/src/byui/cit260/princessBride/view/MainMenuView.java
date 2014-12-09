@@ -77,11 +77,31 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("\n*** loadGame called ***");
+        System.out.println("\n\nEnter the file path for tile where the game "
+                            + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.loadGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame called ***");
+        System.out.println("\n\nEnter the file path for tile where the game "
+                            + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(PrincessBride.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
     private void getHelp() {
         

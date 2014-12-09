@@ -17,6 +17,12 @@ import byui.cit260.princessBride.model.Scene;
 import byui.cit260.princessBride.model.TortureDevice;
 import byui.cit260.princessBride.model.Weapon;
 import byui.cit260.princessBride.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +34,49 @@ public class PrincessBride {
      */    
     private static Game currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
     public static void main(String[] args) {
+        
+        try {
+            
+           PrincessBride.inFile = 
+                   new BufferedReader(new InputStreamReader(System.in));
+           
+           PrincessBride.outFile = new PrintWriter(System.out, true);
+           
+           //open log file
+           String filePath = "log.txt";
+           PrincessBride.logFile = new PrintWriter(filePath);
+           
+        } catch (Exception e) {
+                System.out.println("Exception: " + e.toString() +
+                                    "\nCause: " + e.getCause() +
+                                    "\nMessage: " + e.getMessage());
+            
+        }
+        
+        finally {
+            try {
+                if (PrincessBride.inFile != null)
+                PrincessBride.inFile.close();
+                
+                if (PrincessBride.outFile != null)
+                PrincessBride.outFile.close();
+                
+                if (PrincessBride.logFile != null)
+                    PrincessBride.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+            
+        }
+        
         Player playerOne = new Player();
 //        
         playerOne.setName("Captain Kudos");
@@ -143,16 +191,32 @@ public class PrincessBride {
     public static void setPlayer(Player player) {
         PrincessBride.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        PrincessBride.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        PrincessBride.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        PrincessBride.logFile = logFile;
+    }
+    
+
+    
 }
   
-
-
-
-
-   
-
-    
-    
-  
-    
-

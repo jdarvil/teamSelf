@@ -16,6 +16,12 @@ import byui.cit260.princessBride.model.Player;
 import byui.cit260.princessBride.model.Scene;
 import byui.cit260.princessBride.model.Scene.SceneType;
 import byui.cit260.princessBride.model.TortureDevice;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import princessbride.PrincessBride;
 
 /**
@@ -130,10 +136,37 @@ public class GameControl {
         key;
          }
     
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOuputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
        
-       
-       
-       
+    
+       public static void loadGame(String filepath)
+                            throws GameControlException {
+           Game game = null;
+           
+           try( FileInputStream fips = new FileInputStream(filepath)) {
+               ObjectInputStream output = new ObjectInputStream(fips);
+               
+               game = (Game) output.readObject();
+           }
+           catch(FileNotFoundException fnfe) {
+               throw new GameControlException(fnfe.getMessage());
+           }
+           catch(Exception e) {
+               throw new GameControlException(e.getMessage());
+           }
+           PrincessBride.setCurrentGame(game);
+       }
        
        
        

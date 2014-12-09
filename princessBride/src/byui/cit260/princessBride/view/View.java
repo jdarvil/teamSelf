@@ -5,7 +5,13 @@
  */
 package byui.cit260.princessBride.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import princessbride.PrincessBride;
 
 /**
  *
@@ -14,6 +20,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     private final String promptMessage;
    
+    protected final BufferedReader keyboard = PrincessBride.getInFile();
+    protected final PrintWriter console = PrincessBride.getOutFile();
+    
   public View(String promptMessage){
     this.promptMessage = promptMessage;
   }
@@ -24,7 +33,7 @@ public abstract class View implements ViewInterface {
     String value;
     char selection = ' ';
     do{
-      System.out.println(this.promptMessage); //display promt message
+      this.console.println(this.promptMessage); //display promt message
       value = this.getInput(); // get the user selection
       this.doAction(value); // do action based on selection
       
@@ -39,29 +48,30 @@ public abstract class View implements ViewInterface {
 
   @Override
   public String getInput(){
-  Scanner keyboard = new Scanner(System.in);
   boolean valid = false;
   String selection = null;
    
-  //while a valid name has not been retrived
-  while (!valid){
+  try {
+    //while a valid name has not been retrived
+    while (!valid){
    
-  //promt for players name
-  System.out.println("\t\nEnter your selection below: ");
+          //get the value entered from the keyborad
+          selection = this.keyboard.readLine();
+          selection = selection.trim();
+          
+          if(selection.length() < 1 ){ //blank value entered
+              ErrorView.display(this.getClass().getName(),
+                                "You must enter a value.");
+              continue;
+          }
+          break;
+        }
+    } catch (Exception e) {
+        ErrorView.display(this.getClass().getName(),
+                            "Error reading input: " + e.getMessage());
+    }
    
-  // get the value entered form the keyboard
-  selection = keyboard.nextLine();
-  selection = selection.trim();
-   
-  if(selection.length() < 1 ){ //blank value entered
-  System.out.println("\n*** Invalid Selection * Try again");
-  continue;
-   
-  }
-  break;
-  }
-   
-  return selection; // return the name
+    return selection; // return the name
    
   }
    
