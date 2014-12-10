@@ -53,31 +53,7 @@ public class PrincessBride {
            String filePath = "log.txt";
            PrincessBride.logFile = new PrintWriter(filePath);
            
-        } catch (Exception e) {
-                System.out.println("Exception: " + e.toString() +
-                                    "\nCause: " + e.getCause() +
-                                    "\nMessage: " + e.getMessage());
-            
-        }
-        
-        finally {
-            try {
-                if (PrincessBride.inFile != null)
-                PrincessBride.inFile.close();
-                
-                if (PrincessBride.outFile != null)
-                PrincessBride.outFile.close();
-                
-                if (PrincessBride.logFile != null)
-                    PrincessBride.outFile.close();
-            } catch (IOException ex) {
-                System.out.println("Error closing files");
-                return;
-            }
-            
-        }
-        
-        Player playerOne = new Player();
+           Player playerOne = new Player();
 //        
         playerOne.setName("Captain Kudos");
         playerOne.setStrength(4.00);
@@ -172,7 +148,33 @@ public class PrincessBride {
        System.out.println(tortureInfo);
         
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        startProgramView.display();
+           
+        } catch (Exception e) {
+                System.out.println("Exception: " + e.toString() +
+                                    "\nCause: " + e.getCause() +
+                                    "\nMessage: " + e.getMessage());
+            
+        }
+        
+        finally {
+            try {
+                if (PrincessBride.inFile != null)
+                PrincessBride.inFile.close();
+                
+                if (PrincessBride.outFile != null)
+                PrincessBride.outFile.close();
+                
+                if (PrincessBride.logFile != null)
+                    PrincessBride.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+            
+        }
+        
+        
  
     }
 

@@ -75,12 +75,10 @@ public abstract class View implements ViewInterface {
    
   }
    
-   
-  @Override
-  public void doAction(String value){
+
       
    
-  }
+
    
    
 }

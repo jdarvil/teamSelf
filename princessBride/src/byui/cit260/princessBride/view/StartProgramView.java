@@ -13,13 +13,35 @@ import java.util.Scanner;
  *
  * @author Daniel
  */
-public class StartProgramView {
+public class StartProgramView extends View{
 
-    public void startProgram() {
+    public StartProgramView() {
+        super("\n\n *****************************************************************"
+      + "\n * Princess Buttercup has been kidnpped right before she was       *"
+      + "\n * doomed to marry the evil Prince Humperdink. Princess Buttercup  *"
+      + "\n * mysteriously disappeared. You will face giants, fight swordsman *"
+      + "\n * escape kidnappers, torturers and vile swamps in order to save   *"
+      + "\n * your true love.                                                 *"
+      + "\n *****************************************************************"
+      + "\n *                 Welcome to the Princess Bride                 *"       
+      + "\n*****************************************************************"
+      + "\n\nEnter the player's name"
+       );
+    }
     
-        this.displayBanner();
+    @Override
+    public void doAction(String value) {
+    
+    
         
-        String playersName = this.getPlayersName();
+        
+       String playersName = value.trim();
+            
+            if(playersName.length() < 1) {
+                System.out.println("Invaild Name - The name must not be blank");
+                return;
+                }
+            
         
         Player player = ProgramControl.createPlayer(playersName);
         
@@ -32,40 +54,11 @@ public class StartProgramView {
         
     }
 
-    private void displayBanner() {
-       System.out.println("\n\n *****************************************************************"
-      + "\n * Princess Buttercup has been kidnpped right before she was       *"
-      + "\n * doomed to marry the evil Prince Humperdink. Princess Buttercup  *"
-      + "\n * mysteriously disappeared. You will face giants, fight swordsman *"
-      + "\n * escape kidnappers, torturers and vile swamps in order to save   *"
-      + "\n * your true love.                                                 *"
-      + "\n *****************************************************************"
-      + "\n *                 Welcome to the Princess Bride                 *"       
-      + "\n*****************************************************************"
-       ); 
-    }
+  
 
    
 
-   private String getPlayersName() {
-        boolean valid = false;
-        String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-            System.out.println("Enter the Players Name below");
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
-            
-            if(playersName.length() < 1) {
-                System.out.println("Invaild Name - The name must not be blank");
-                continue;
-                }
-            break;
-        }
-        
-        return playersName;
-    }
+   
 
     private void displayWelcomeMessage(Player player) {
         System.out.println("\n\n *****************************************************************\n");
@@ -74,6 +67,8 @@ public class StartProgramView {
         System.out.println("\n *****************************************************************");
        
     }
+
+    
 
       
     
