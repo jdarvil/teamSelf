@@ -5,6 +5,7 @@
  */
 package byui.cit260.princessBride.control;
       
+import byui.cit260.princessBride.exceptions.GameControlException;
 import byui.cit260.princessBride.exceptions.MapControlException;
 import byui.cit260.princessBride.model.Boulder;
 import byui.cit260.princessBride.model.Game;
@@ -140,7 +141,7 @@ public class GameControl {
             throws GameControlException {
         
         try( FileOutputStream fops = new FileOutputStream(filepath)) {
-            ObjectOuputStream output = new ObjectOutputStream(fops);
+            ObjectOutputStream output = new ObjectOutputStream(fops);
             
             output.writeObject(game);
         }

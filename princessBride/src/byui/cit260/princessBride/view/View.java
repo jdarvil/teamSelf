@@ -31,7 +31,7 @@ public abstract class View implements ViewInterface {
   @Override
   public void display(){
     String value;
-    char selection = ' ';
+    boolean done = false;
     do{
       this.console.println(this.promptMessage); //display promt message
       value = this.getInput(); // get the user selection
@@ -42,7 +42,7 @@ public abstract class View implements ViewInterface {
      * than E or e. If one of them is true then the expression evauates to true.
      * Think about the compound operator || (OR). Don't you want something else.
      */ 
-    }while (!value.equals("E")||!value.equals("e"));
+    }while (!value.equals("E")&&!value.equals("e"));
    
   }
 
